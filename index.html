@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Text Editor Rogosnyi</title>
+  </head>
+  <body>
+    <div class="container">
+      <h4 id="title">Text Editor</h4>
+      <div class="controls">
+        <div class="main-controls">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              File
+            </button>
+            <div class="dropdown-menu">
+              <button id="new-btn" class="dropdown-item">New</button>
+              <button id="txt-btn" class="dropdown-item">Save as TXT</button>
+              <button id="pdf-btn" class="dropdown-item">Save as PDF</button>
+            </div>
+          </div>
+          <input id="filename-input" type="Text" value="untitled" />
+        </div>
+        <div class="control-btn-container">
+          <button id="bold-btn" class="btn btn-dark control-btn">Bold</button>
+          <button id="underline-btn" class="btn btn-dark control-btn">
+            Underline
+          </button>
+          <button id="italic-btn" class="btn btn-dark control-btn">
+            Italic
+          </button>
+          <button id="justify-left" class="btn btn-dark control-btn">
+            Left
+          </button>
+          <button id="justify-center" class="btn btn-dark control-btn">
+            Center
+          </button>
+          <button id="justify-right" class="btn btn-dark control-btn">
+            Right
+          </button>
+          <select onchange="fontEditor(this[this.selectedIndex].value)">
+            <option value="Arial">Arial</option>
+            <option value="Calibri">Calibri</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Oswald">Oswald</option>
+          </select>
+          <input id="color-btn" type="color" class="control-btn" />
+        </div>
+      </div>
+      <div id="content" contenteditable="true" spellcheck="false"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/scripts/text_buttons.js"></script>
+    <script src="/scripts/file_control.js"></script>
+  </body>
+</html>
